@@ -6,7 +6,7 @@ export class Judge {
       console.log(i);
       const winner = this.judgeJanken(player1, player2);
       if (winner) {
-        winner.notifyResult(winner);
+        winner.notifyResult();
         console.log(`${winner.getName()}が勝ちました`);
       }
       if (!winner) {

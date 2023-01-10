@@ -16,8 +16,8 @@ export class Player {
     if (hand < 2) return Player.SCISSORS;
     return Player.PAPER;
   }
-  notifyResult(result: boolean) {
-    if (result) this.winCount += 1;
+  notifyResult() {
+    this.winCount += 1;
   }
   getWinCount() {
     return this.winCount;
