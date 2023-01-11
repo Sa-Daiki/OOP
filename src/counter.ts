@@ -1,4 +1,4 @@
-import { Player, startJanken } from "./lesson3";
+import { Janken, Player } from "./lesson3";
 
 export function setupCounter(element: HTMLButtonElement) {
   let counter = 0;
@@ -11,5 +11,6 @@ export function setupCounter(element: HTMLButtonElement) {
 
   const taro = new Player("taro");
   const jiro = new Player("jiro");
-  startJanken(taro, jiro);
+  const janken = new Janken();
+  janken.startJanken(taro, jiro);
 }
