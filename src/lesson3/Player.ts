@@ -1,8 +1,4 @@
 export class Player {
-  static STONE: number = 0;
-  static SCISSORS: number = 1;
-  static PAPER: number = 2;
-
   private name: string;
   private winCount = 0;
 
@@ -11,10 +7,7 @@ export class Player {
   }
 
   showHand() {
-    const hand = Math.random() * 3;
-    if (hand < 1) return Player.STONE;
-    if (hand < 2) return Player.SCISSORS;
-    return Player.PAPER;
+    return Math.floor(Math.random() * 3);
   }
   notifyResult() {
     this.winCount += 1;
