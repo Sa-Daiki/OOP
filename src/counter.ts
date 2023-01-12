@@ -1,3 +1,6 @@
+import { Airplane } from "./bird/airplane";
+import { FlyingMuseum } from "./bird/flyingMuseum";
+import { Sparrow } from "./bird/sparrow";
 import { Janken, Player } from "./lesson3";
 
 export function setupCounter(element: HTMLButtonElement) {
@@ -13,4 +16,9 @@ export function setupCounter(element: HTMLButtonElement) {
   const jiro = new Player("jiro");
   const janken = new Janken();
   janken.startJanken(taro, jiro);
+
+  const tyunta = new Sparrow("チュン太", 2);
+  const jall = new Airplane("日本", "アメリカ");
+  FlyingMuseum.discover(tyunta);
+  FlyingMuseum.discover(jall);
 }
