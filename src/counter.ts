@@ -1,6 +1,6 @@
-import { Airplane } from "./bird/airplane";
-import { FlyingMuseum } from "./bird/flyingMuseum";
-import { Sparrow } from "./bird/sparrow";
+import { Airplane } from "./task1/airplane";
+import { FlyingMuseum } from "./task1/flyingMuseum";
+import { Sparrow } from "./task1/sparrow";
 import { Janken, Player } from "./lesson3";
 
 export function setupCounter(element: HTMLButtonElement) {
