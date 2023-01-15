@@ -1,7 +1,8 @@
 import { Airplane } from "./task1/airplane";
 import { FlyingMuseum } from "./task1/flyingMuseum";
 import { Sparrow } from "./task1/sparrow";
-import { Janken, Player } from "./lesson3";
+import { Judge, Player } from "./lesson3";
+import { RandomTactics } from "./lesson3/tactics";
 
 export function setupCounter(element: HTMLButtonElement) {
   let counter = 0;
@@ -12,10 +13,14 @@ export function setupCounter(element: HTMLButtonElement) {
   element.addEventListener("click", () => setCounter(counter + 1));
   setCounter(0);
 
+  const judge = new Judge();
   const taro = new Player("taro");
   const jiro = new Player("jiro");
-  const janken = new Janken();
-  janken.startJanken(taro, jiro);
+
+  taro.setTactics(new RandomTactics());
+  jiro.setTactics(new RandomTactics());
+
+  judge.startJanken(taro, jiro);
 
   const tyunta = new Sparrow("チュン太", 2);
   const jall = new Airplane("日本", "アメリカ");
