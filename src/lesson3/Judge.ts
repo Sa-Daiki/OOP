@@ -1,10 +1,7 @@
 import { Player } from "./Player";
+import { RandomTactics } from "./tactics";
 
-export class Janken {
-  STONE = 0;
-  SCISSORS = 1;
-  PAPER = 2;
-
+export class Judge {
   startJanken(player1: Player, player2: Player) {
     for (let i = 0; i < 3; i++) {
       const winner = this.judgeJanken(player1, player2);
@@ -18,26 +15,28 @@ export class Janken {
     const finalWinner = this.judgeFinalWinner(player1, player2);
 
     if (finalWinner) {
+      console.log(`${finalWinner.getName()} win!`);
       return;
     }
+    console.log("draw!");
   }
 
   private judgeJanken(player1: Player, player2: Player) {
     const hand1 = player1.showHand();
     const hand2 = player2.showHand();
 
-    if (hand1 === this.STONE) {
-      if (hand2 === this.STONE) return null;
-      if (hand2 === this.SCISSORS) return player1;
+    if (hand1 === RandomTactics.STONE) {
+      if (hand2 === RandomTactics.STONE) return null;
+      if (hand2 === RandomTactics.SCISSORS) return player1;
       return player2;
     }
-    if (hand1 === this.SCISSORS) {
-      if (hand2 === this.STONE) return player2;
-      if (hand2 === this.SCISSORS) return null;
+    if (hand1 === RandomTactics.SCISSORS) {
+      if (hand2 === RandomTactics.STONE) return player2;
+      if (hand2 === RandomTactics.SCISSORS) return null;
       return player1;
     }
-    if (hand2 === this.STONE) return player1;
-    if (hand2 === this.SCISSORS) return player2;
+    if (hand2 === RandomTactics.STONE) return player1;
+    if (hand2 === RandomTactics.SCISSORS) return player2;
     return null;
   }
 
