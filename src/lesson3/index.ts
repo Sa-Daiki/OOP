@@ -1,2 +1,2 @@
-export * from "./Janken";
+export * from "./Judge";
 export * from "./Player";
