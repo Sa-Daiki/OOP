@@ -11,3 +11,25 @@ export class RandomTactics implements Tactics {
     return Math.floor(Math.random() * 3);
   }
 }
+
+interface Car {
+  drive: () => void;
+}
+
+class ModelX implements Car {
+  drive() {
+    console.log("x");
+  }
+}
+
+class ModelY implements Car {
+  drive() {
+    console.log("y");
+  }
+}
+
+class ModleS implements Car {
+  drive() {
+    console.log("s");
+  }
+}
